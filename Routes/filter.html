@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switcheroo!</title>
+    <style>
+        #first {
+            margin-left: 30%;
+        }
+        /* button {
+            margin-left: 20%;
+        } */
+    </style>
+</head>
+<body>
+   <button id="first" class="but" value="FirstB" onclick="changer(id, value)">FirstB</button> 
+   <button id="second" value="SecondB" class="but" onclick="changer(id, value)">SecondB</button> 
+   <button id="third"  value="ThirdB"class="but" onclick="changer(id, value)">ThirdB</button> 
+</body>
+<script>
+    let buttons = document.querySelectorAll('but')
+    let buttons2 = document.getElementsByClassName('but')
+    console.log(buttons2)
+
+    let changer = (id, value)=> {
+            this.id = id
+            this.value = value   
+            for (let button of buttons2){
+                button.innerHTML = button.value
+            }      
+            console.log(buttons2[id].innerHTML)
+            buttons2[id].innerHTML = 'Changed'  
+
+        
+    }
+    // changer()
+</script>
+</html>
